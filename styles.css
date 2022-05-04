@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap');
+
+:root {
+  --white: #fff;
+  --black: #1c2b2d;
+  --blue: #31326f;
+  --light-blue: #005490;
+  --color-primary: #9d0191;
+  --color-sec: #db6400;
+  --grey: #eee;
+  --dark-grey: #222831;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+background-color: #6e6d70;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='46' viewBox='0 0 70 46'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23252427' fill-opacity='0.4'%3E%3Cpolygon points='68 44 62 44 62 46 56 46 56 44 52 44 52 46 46 46 46 44 40 44 40 46 38 46 38 44 32 44 32 46 26 46 26 44 22 44 22 46 16 46 16 44 12 44 12 46 6 46 6 44 0 44 0 42 8 42 8 28 6 28 6 0 12 0 12 28 10 28 10 42 18 42 18 28 16 28 16 0 22 0 22 28 20 28 20 42 28 42 28 28 26 28 26 0 32 0 32 28 30 28 30 42 38 42 38 0 40 0 40 42 48 42 48 28 46 28 46 0 52 0 52 28 50 28 50 42 58 42 58 28 56 28 56 0 62 0 62 28 60 28 60 42 68 42 68 0 70 0 70 46 68 46'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+font-family: "Baloo Da 2", cursive;
+}
+
+/* p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+} */
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* Start Here */
+section.main {
+  width: 100%;
+  height: 100vh;
+  /* background-color: var(--blue); */
+  text-align: center;
+}
+/* 
+header {
+  color: var(--white);
+} */
+
+header h1 {
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 4.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  padding-top: 1rem;
+  color: #f9f6f2;
+  text-shadow: 0 .5rem .5rem var(--color-sec);
+}
+
+header p {
+  font-family: 'Baloo Da 2', cursive;
+  color: #e1dbd6;
+  text-shadow: .1rem .2rem .2rem var(--color-sec);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: .1rem;
+}
+
+.key-pressed {
+  font-family: 'Baloo Da 2', cursive;
+  font-size: 10rem;
+  /* margin: 1rem 0; */
+  color: #e2e2e2;
+  text-shadow: .5rem .5rem 1rem var(--color-sec);
+}
+
+.keys {
+  width: 100%;
+  height: 35rem;
+  max-width: 88rem;
+  position: relative;
+}
+
+.key {
+  position: relative;
+  border: 4px solid var(--black);
+  border-radius: 5px;
+  transition: all 0.07s ease;
+  z-index: 2;
+}
+
+.key:not(.sharp) {
+  float: left;
+  width: 10%;
+  height: 100%;
+  background-color: var(--white);
+}
+
+.key.sharp {
+  position: absolute;
+  top: 0;
+  width: 6%;
+  height: 60%;
+  background-color: var(--black);
+  color: var(--grey);
+  z-index: 3;
+}
+
+.key[data-key="87"] {
+  left: 7%;
+}
+.key[data-key="69"] {
+  left: 17%;
+}
+.key[data-key="84"] {
+  left: 37%;
+}
+.key[data-key="89"] {
+  left: 47%;
+}
+.key[data-key="85"] {
+  left: 57%;
+}
+.key[data-key="79"] {
+  left: 77%;
+}
+.key[data-key="80"] {
+  left: 87%;
+}
+
+.playing {
+  transform: scale(0.9);
+  border-color: var(--color-sec);
+}
+
+.playing .key {
+  background-color: var(--color-sec);
+}
+
+.hints {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  bottom: 7px;
+  transition: all 0.3s ease;
+  font-size: 2rem;
+}
+
+.keys:hover .hints {
+  opacity: 1;
+}
